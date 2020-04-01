@@ -89,10 +89,10 @@ class _DialPainter extends CustomPainter {
     canvas.drawCircle(handlePoint, 20.0, handlePaint);
 
     // Draw the Text in the center of the circle which displays hours and mins
-    String hours = (multiplier == 0) ? '' : "${multiplier}h ";
+    String hours = (multiplier == 0) ? '' : "${multiplier}ч ";
 //    int minutes = (pctTheta * 60).round();
 //    minutes = minutes == 60 ? 0 : minutes;
-    String minutes = "$minuteHand";
+    String minutes = "$minuteHand" + (multiplier == 0 ? '' : 'м');
 
     TextPainter textDurationValuePainter = new TextPainter(
         textAlign: TextAlign.center,
@@ -113,7 +113,7 @@ class _DialPainter extends CustomPainter {
     TextPainter textMinPainter = new TextPainter(
         textAlign: TextAlign.center,
         text: new TextSpan(
-            text: 'мин.', //th: ${theta}',
+            text: multiplier == 0 ? 'мин.' : '', //th: ${theta}',
             style: Theme.of(context).textTheme.body1),
         textDirection: TextDirection.ltr)
       ..layout();
