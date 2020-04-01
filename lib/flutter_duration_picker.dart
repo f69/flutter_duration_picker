@@ -113,7 +113,7 @@ class _DialPainter extends CustomPainter {
     TextPainter textMinPainter = new TextPainter(
         textAlign: TextAlign.center,
         text: new TextSpan(
-            text: 'min.', //th: ${theta}',
+            text: 'мин.', //th: ${theta}',
             style: Theme.of(context).textTheme.body1),
         textDirection: TextDirection.ltr)
       ..layout();
